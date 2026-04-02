@@ -379,15 +379,15 @@ function run_WC_braintree_payment_gateway() {
 				'amount'             => $order->get_total(), //order_total,
 				'paymentMethodNonce' => $payment_nonce,
 				'channel'            => 'TipsandTricks_SP',
-				'customer'           => [
+				'customer'           => array(
 					'firstName' => $c_fname,
 					'lastName'  => $c_lname,
 					'phone'     => $c_phone,
 					'email'     => $c_email,
-				],
-				'options'            => [
+				),
+				'options'            => array(
 					'submitForSettlement' => true,
-				],
+				),
 			);
 
 			$transaction_args = apply_filters( 'woocommerce_braintree_transaction_args', $transaction_args, $order );
